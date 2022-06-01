@@ -16,11 +16,11 @@ def gfg():
 
         import pandas as pd
         import numpy as np
-        dataset = pd.read_excel("Student_Marks.csv")
+        dataset = pd.read_excel("/content/drive/MyDrive/Position_Salaries.xlsx")
 
-        x = dataset.iloc[:, :-1]
+        x = dataset.iloc[:,1:2].values
 
-        y = dataset.iloc[:, 2]
+        y = dataset.iloc[:,2:].values
 
         from sklearn.model_selection import train_test_split
         X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=1 / 3, random_state=0)
@@ -31,10 +31,10 @@ def gfg():
 
         y_pred = regressor.predict(X_test)
 
-        input1 = request.form.get("subjects")
-        input2 = request.form.get("time")
+        input1 = request.form.get("level")
+       
 
-        Xnew = [[input1],[input2]]
+        Xnew = [[input1]
 
         result = regressor.predict(Xnew)
 
